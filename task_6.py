@@ -30,10 +30,8 @@ def game_start(count, number):
     else:
         if user_digit > number:
             print('Меньше!')
-            count += 1
         elif user_digit < number:
             print('Больше!')
-            count += 1
-        return game_start(count, number)
+        return game_start(count + 1, number)
 
 game()
