@@ -23,7 +23,7 @@
 """
 
 
-def func_chr(i, chr_str='', n = 1):
+def func_chr(i, chr_str='', n=1):
     if i == 128:
         return print(chr_str)
     else:

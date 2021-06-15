@@ -30,11 +30,9 @@ def user_digit():
 
 
 def reverse_digit(digit):
-
-    while digit != 0:
-        return str(digit % 10) + str(reverse_digit(digit // 10))
-    return digit
+    if digit == 1:
+        return digit
+    return str(digit % 10) + str(reverse_digit(digit // 10))
 
 
 print(user_digit())
-
