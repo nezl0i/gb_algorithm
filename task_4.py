@@ -21,16 +21,14 @@
 
 def user_digit():
     digit = int(input('Введите количество элементов: '))
-    return get_sum(digit - 1, 1, 1)
+    return get_sum(digit,  1)
 
 
-def get_sum(count, p, total):
-    if count == 0:
+def get_sum(count, total):
+    if count == 1:
         return total
     else:
-        p = -(p / 2)
-        total += p
-        return get_sum(count - 1, p, total)
+        return total + get_sum(count - 1,  -(total / 2))
 
 
 print(user_digit())
