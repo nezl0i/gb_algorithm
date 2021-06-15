@@ -23,15 +23,14 @@
 """
 
 
-def func_chr(i, chr_str='', n=1):
+def func_chr(i, chr_str=''):
     if i == 128:
         return chr_str
     else:
-        if n > 10:
+        if i % 10 == 2:
             chr_str += '\n'
-            n = 0
         chr_str += f'{i} - {chr(i)} '
-        return func_chr(i + 1, chr_str, n + 1)
+        return func_chr(i + 1, chr_str)
 
 
 print(func_chr(32))
