@@ -25,7 +25,7 @@
 
 def func_chr(i, chr_str='', n=1):
     if i == 128:
-        return print(chr_str)
+        return chr_str
     else:
         new_str = f' {i} - {chr(i)} '
         if n > 10:
@@ -35,4 +35,4 @@ def func_chr(i, chr_str='', n=1):
         return func_chr(i + 1, chr_str, n + 1)
 
 
-func_chr(32)
+print(func_chr(32))
