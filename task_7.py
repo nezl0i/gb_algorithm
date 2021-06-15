@@ -19,11 +19,13 @@
 
 
 def my_func(n):
-
     if n == 1:
-        return True if n == (n * (n + 1) / 2) else False
+        b = n * (n + 1) / 2
+        print('Истина') if n == b else print('Ложь')
+        return n
     else:
         return n + my_func(n - 1)
 
 
-print(my_func(5))
+my_func(5)
+
