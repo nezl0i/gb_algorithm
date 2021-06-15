@@ -27,17 +27,12 @@ def func_chr(i, chr_str='', n=1):
     if i == 128:
         return print(chr_str)
     else:
-        if n < 10:
-            n_str = f' {i} - {chr(i)} '
-            chr_str += n_str
-            n += 1
-        else:
-            n_str = f' {i} - {chr(i)} '
-            chr_str += n_str
-            print(chr_str)
-            chr_str = ''
-            n = 1
-        return func_chr(i + 1, chr_str, n)
+        new_str = f' {i} - {chr(i)} '
+        if n > 10:
+            new_str += '\n'
+            n = 0
+        chr_str += new_str
+        return func_chr(i + 1, chr_str, n + 1)
 
 
 func_chr(32)
