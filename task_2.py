@@ -49,14 +49,14 @@ def check_passwd():
     hashed_password = sha256(input_.encode('utf-8') + salt.encode('utf-8')).hexdigest()
     # print(hashed_password)
 
-    sql = f'SELECT password, user FROM "user" WHERE ("password" ' \
+    sql = f'SELECT password, real FROM "hashes" WHERE ("password" ' \
           f'LIKE "%{hashed_password}%");'
     result = bd.query(sql).fetchall()
     if len(result) != 0:
         return 'Your Password is correct!!!'
     else:
-        sqlite_insert = f'INSERT INTO user ' \
-                        f'(password, user) ' \
+        sqlite_insert = f'INSERT INTO hashes ' \
+                        f'(password, real) ' \
                         f'VALUES {hashed_password, input_};'
         bd.query(sqlite_insert)
         bd.stat()
