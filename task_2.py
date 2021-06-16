@@ -26,12 +26,14 @@ def user_digit():
 
 
 def get_digit(digit, even, odd):
-    while digit != 0:
+    if digit != 0:
+        return get_digit(digit // 10, even, odd)
+    else:
         if (digit % 10) % 2 == 0:
             even += 1
         else:
             odd += 1
-        return get_digit(digit // 10, even, odd)
+
     return f'Количество четных и нечетных цифр в числе равно: {even, odd}'
 
 

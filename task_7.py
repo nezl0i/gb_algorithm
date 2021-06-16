@@ -20,12 +20,12 @@
 
 def my_func(n):
     if n == 1:
-        b = n * (n + 1) / 2
-        print('Истина') if n == b else print('Ложь')
         return n
     else:
         return n + my_func(n - 1)
 
 
-my_func(5)
-
+n = 5
+res = my_func(n)
+b = n * (n + 1) / 2
+print('Истина') if res == b else print('Ложь')
