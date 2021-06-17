@@ -16,3 +16,20 @@
 р
 а
 """
+
+from hashlib import sha256
+
+
+def get_str_hash(str_text):
+    element = set()
+    for i in range(1, len(str_text)):
+        for j in range(len(str_text)):
+            block = str_text[j: j + i]
+            element.add(block)
+            print(sha256(block.encode('utf-8')).hexdigest())
+    return element
+
+
+print(get_str_hash('papa'))
+
+

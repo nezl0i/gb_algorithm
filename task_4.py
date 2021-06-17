@@ -11,3 +11,23 @@
 
 Задание творческое. Здесь нет жестких требований к выполнению.
 """
+
+from hashlib import sha256
+
+SALT = 'hT56+@#hy7--'
+DICT_URL = {}
+
+
+def get_hash(url):
+    if DICT_URL.get(url):
+        print(f'{url} есть в кеше')
+    else:
+        hash_url = sha256(SALT.encode('utf-8') + url.encode('utf-8')).hexdigest()
+        DICT_URL[url] = hash_url
+        print(f'Страница {url} добавлена в хеш')
+
+
+get_hash('https://www.yandex.ru/')
+get_hash('https://www.yandex.ru/')
+get_hash('https://www.google.com/')
+get_hash('https://www.google.com/')
