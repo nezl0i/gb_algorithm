@@ -155,18 +155,18 @@ Line #    Mem usage    Increment  Occurences   Line Contents
 
 # Проверим парсер на предмет расхода памяти
 
-# class BaseExtractor:
-#     @profile
-#     def parse_list(self, array):
-#         f = open('words.txt', 'w')
-#         for word in array:
-#             f.writelines(word)
-#
-#     @profile
-#     def parse_url(self, url):
-#         response = requests.get(url).text
-#         with open('url.txt', 'w') as f:
-#             f.writelines(response)
+class BaseExtractor:
+    @profile
+    def parse_list(self, array):
+        f = open('words.txt', 'w')
+        for word in array:
+            f.writelines(word)
+
+    @profile
+    def parse_url(self, url):
+        response = requests.get(url).text
+        with open('url.txt', 'w') as f:
+            f.writelines(response)
 
 """
 Line #    Mem usage    Increment  Occurences   Line Contents
