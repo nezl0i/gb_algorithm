@@ -25,6 +25,7 @@ from memory_profiler import profile
 import time
 import numpy as np
 import requests
+import random
 
 # Example_1
 # -------------------------------------------------
@@ -36,7 +37,6 @@ import requests
 
 @profile
 def main_func1():
-    import random
     arr1 = [random.randint(1, 10) for i in range(100000)]
     arr2 = [random.randint(1, 10) for i in range(100000)]
     arr3 = [arr1[i] + arr2[i] for i in range(100000)]
@@ -65,7 +65,6 @@ Line #    Mem usage    Increment  Occurences   Line Contents
 
 @profile
 def main_func1():
-    import random
     arr1 = [random.randint(1, 10) for i in range(100000)]
     arr2 = [random.randint(1, 10) for i in range(100000)]
     arr3 = [arr1[i] + arr2[i] for i in range(100000)]
@@ -126,7 +125,6 @@ def main_func():
 @profile
 def random_generator2():
     arr1 = np.random.randint(1, 100, size=(1000, 1000))
-
     avg = arr1.mean()
     del arr1
     return avg
