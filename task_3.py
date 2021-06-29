@@ -8,6 +8,7 @@
 
 Но если это слишком сложно, то используйте метод сортировки,
 который не рассматривался на уроках: Шелла, Гномья, Кучей...
+https://github.com/nezl0i/gb_algorithm/pull/7
 """
 import random
 from statistics import median

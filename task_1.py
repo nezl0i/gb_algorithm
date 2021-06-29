@@ -16,6 +16,7 @@
 
 Сделайте выводы!!!
 Опишите в чем была ваша доработка и помогла ли вам доработка??
+https://github.com/nezl0i/gb_algorithm/pull/7
 """
 from random import randint
 from timeit import timeit
